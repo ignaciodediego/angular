@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {Employee} from '../app/models/employee'
 import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
+import { Link } from './link/link.model';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,39 @@ import { ngfactoryFilePath } from '@angular/compiler/src/aot/util';
 })
 export class AppComponent {
   
+  numComponentes: number=0;
+
+/*
+  linksArray: Link[];
+  
+  constructor() {
+    this.links = new Link();
+  }
+
+  addLink() {
+    this.links.push(new Link());
+    return false;
+  }
+ */
+
+  createComponent() {
+    this.numComponentes++;
+    console.log('El número de componentes es: ', this.numComponentes);
+  }
+
+  removeComponent() {
+    if(this.numComponentes > 0){
+      this.numComponentes--;
+    }    
+    console.log('El número de componentes es: ', this.numComponentes);
+  }
+
   // clase empleado que se crea al crear la clase APPComponent
   employeeArray: Employee[] = [
     {id: 1, name: "Nacho", country: "España"},
     {id: 2, name: "Pedro", country: "España"},
     {id: 3, name: "María", country: "España"}
-  ]
+  ];
   // clase empleado seleccionado, la primera vez que se crea la clase está vacía
   selectedEmployee: Employee = new Employee();
 

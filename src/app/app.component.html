@@ -1,6 +1,6 @@
 <header>  
     <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="/">Test para Angular</a>      
+        <a class="navbar-brand" href="/">Ignacio De Diego -- Test para Angular</a>      
     </nav>  
 </header>
 
@@ -8,6 +8,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
+        <div class="navbar-brand mb-4">
+          CRUD Simple
+        </div>
         <ul class="list-group">
           <!-- *ngFor es código Backend de Angular como el For(){} de PHP por ejemplo -->
           <li
@@ -44,8 +47,34 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+          <div class="navbar-brand mt-4">
+              Creación dinámica de componentes
+          </div>
+          <div class="card text-center mt-4">
+              <div class="card-header">
+                  Crea componentes de forma dinámica
+              </div>
+              <div class="card-body">
+                Pulsa Crear para añadir el componente o selecciona el que desees y pulsa Eliminar para suprimirlo.
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary mr-2" (click)="createComponent()">Crear</button>
+                <button class="btn btn-danger" (click)="removeComponent()">Eliminar</button>
+              </div>  
+          </div>
+          <app-link *ngFor="let link of links" [link]="link"></app-link>
+      </div>
+    </div>
   </div>
 </div>
+
+<footer class="mt-4">
+  <nav class="navbar navbar-dark bg-primary text-white">
+      Footer del proyecto
+  </nav>    
+</footer>
  
 <!--
 <div >

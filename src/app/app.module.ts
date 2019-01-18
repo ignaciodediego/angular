@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms'; // sino los formularios no tiran en Angular
+import {FormsModule} from '@angular/forms';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,
